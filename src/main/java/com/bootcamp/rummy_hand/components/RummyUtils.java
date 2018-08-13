@@ -14,7 +14,8 @@ import java.util.stream.Collectors;
 import com.bootcamp.rummy_hand.oldcard.Card;
 
 public class RummyUtils {
-
+	
+	
 	public static Map<String, List<Card>> createRunMaps(List<Card> hand) {
 		Map<String, List<Card>> runMap = initMap(Arrays.asList("Club","Diamond","Heart","Spade"));
 		for (Card c : hand) {
@@ -45,9 +46,8 @@ public class RummyUtils {
 		List<List<Card>> result = new ArrayList<>();
 		for (Entry<String, List<Card>> e : runMaps.entrySet()) {
 			String suit = e.getKey();
-			List<Integer> values = e.getValue().stream()
-										.map(c -> c.getNumberValue())
-										.collect(Collectors.toList());
+			List<Integer> values = e.getValue().stream().map(c -> c.getNumberValue()).collect(Collectors.toList());
+
 			Collections.sort(values);
 			List<List<Integer>> allConsSubSeq = getConsecutiveSubSeq(values);
 			List<List<Integer>> allValidRuns = allConsSubSeq.stream()
@@ -97,6 +97,7 @@ public class RummyUtils {
 		return m;
 	}
 	
+
 	private static List<List<Integer>> getConsecutiveSubSeq(List<Integer> list) {
 		List<List<Integer>> allConsSeq = new ArrayList<>();
 		
@@ -122,4 +123,5 @@ public class RummyUtils {
 		allConsSeq.add(consSeq);
 		return allConsSeq;
 	}
+
 }
