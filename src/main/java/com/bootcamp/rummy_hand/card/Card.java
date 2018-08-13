@@ -63,6 +63,11 @@ public class Card{
     {
         System.out.println(this.value + " of " + this.suit);
     }
+    
+    public int getNumberValue() {
+    		return this.numberValue;
+    }
+    
 	@Override
 	public String toString() {
 		return "Card [value=" + value + ", suit=" + suit + "]";

@@ -46,7 +46,7 @@ public class RummyUtils {
 		for (Entry<String, List<Card>> e : runMaps.entrySet()) {
 			String suit = e.getKey();
 			List<Integer> values = e.getValue().stream()
-										.map(c -> getValueOfCard(c.getValue()))
+										.map(c -> c.getNumberValue())
 										.collect(Collectors.toList());
 			Collections.sort(values);
 			List<List<Integer>> allConsSubSeq = getConsecutiveSubSeq(values);
@@ -112,6 +112,11 @@ public class RummyUtils {
 	
 	private static List<List<Integer>> getConsecutiveSubSeq(List<Integer> list) {
 		List<List<Integer>> allConsSeq = new ArrayList<>();
+		
+		if (list.isEmpty()) {
+			return allConsSeq;
+		}
+		
 		List<Integer> consSeq = new ArrayList<>();
 		consSeq.add(list.get(0));
 		int prev = list.get(0);

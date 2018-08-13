@@ -56,11 +56,13 @@ public class Test {
 	}
 	
 	@org.junit.Test
-	public void test() {
-		Map<String, List<Card>> expected = new HashMap<>();
-		expected.put("Club", Arrays.asList(new Card(4, 1), new Card(3, 1), new Card(5, 1), 
+	public void testGetValidRuns() {
+		Map<String, List<Card>> input = new HashMap<>();
+		input.put("Club", Arrays.asList(new Card(4, 1), new Card(3, 1), new Card(5, 1), 
 										   new Card(12, 1), new Card(11, 1)));
-		System.out.println(RummyUtils.getAllValidRuns(expected));
+		List<List<Card>> expected = new ArrayList<>();
+		expected.add(Arrays.asList(new Card(3, 1), new Card(4, 1), new Card(5, 1)));
+		assertEquals(expected, RummyUtils.getAllValidRuns(input));
 	}
 	
 }
