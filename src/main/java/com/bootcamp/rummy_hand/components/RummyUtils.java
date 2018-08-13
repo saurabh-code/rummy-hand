@@ -38,6 +38,10 @@ public class RummyUtils {
 	}
 	
 	public static List<List<Card>> getAllValidRuns(Map<String, List<Card>> runMaps) {
+		return getAllRuns(runMaps, 3);
+	}
+	
+	public static List<List<Card>> getAllRuns(Map<String, List<Card>> runMaps, int runSize) {
 		List<List<Card>> result = new ArrayList<>();
 		for (Entry<String, List<Card>> e : runMaps.entrySet()) {
 			String suit = e.getKey();
@@ -47,7 +51,7 @@ public class RummyUtils {
 			Collections.sort(values);
 			List<List<Integer>> allConsSubSeq = getConsecutiveSubSeq(values);
 			List<List<Integer>> allValidRuns = allConsSubSeq.stream()
-												.filter(l -> l.size() >= 3)
+												.filter(l -> l.size() >= runSize)
 												.collect(Collectors.toList());
 			
 			for (List<Integer> l : allValidRuns) {
@@ -62,6 +66,10 @@ public class RummyUtils {
 	}
 	
 	public static List<List<Card>> getAllValidSets(Map<String, List<Card>> setMaps) {
+		return getAllSets(setMaps, 3);
+	}
+	
+	public static List<List<Card>> getAllSets(Map<String, List<Card>> setMaps, int setSize) {
 		List<List<Card>> resultSets = new ArrayList<>();
 		for (Entry<String, List<Card>> e : setMaps.entrySet()) {
 			List<Card> set = new ArrayList<>();
@@ -73,7 +81,7 @@ public class RummyUtils {
 				}
 			}
  			
- 			if (set.size() >= 3) {
+ 			if (set.size() >= setSize) {
  				resultSets.add(set);
  			}
 		}
