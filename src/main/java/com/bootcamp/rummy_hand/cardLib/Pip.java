@@ -22,4 +22,8 @@ public enum Pip {
 	private Pip(int rank) {
 		this.rank = rank;
 	}
+	
+	public int getRank() {
+		return this.rank;
+	}
 }
