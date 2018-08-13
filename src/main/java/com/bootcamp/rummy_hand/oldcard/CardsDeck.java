@@ -1,4 +1,4 @@
-package com.bootcamp.rummy_hand.card;
+package com.bootcamp.rummy_hand.oldcard;
 
 import java.util.ArrayList;
 import java.util.Random;

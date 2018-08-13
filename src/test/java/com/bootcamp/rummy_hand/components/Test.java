@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.bootcamp.rummy_hand.card.Card;
+import com.bootcamp.rummy_hand.oldcard.Card;
 
 public class Test {
 

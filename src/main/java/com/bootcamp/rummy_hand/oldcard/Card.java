@@ -1,4 +1,4 @@
-package com.bootcamp.rummy_hand.card;
+package com.bootcamp.rummy_hand.oldcard;
 
 public class Card{
     private final static String[] VALUES ={"Joker","A","2","3","4","5","6","7","8","9","10","J","Q","K","A"};
@@ -10,8 +10,8 @@ public class Card{
     
     public Card(int n1, int n2)
     {
-        this.value=this.VALUES[n1];
-        this.suit=this.SUITS[n2];
+        this.value=Card.VALUES[n1];
+        this.suit=Card.SUITS[n2];
         this.numberValue = n1;
     }
     
@@ -21,7 +21,7 @@ public class Card{
     }
     
     public Card(int value, String suit) {
-		this.value= this.VALUES[value];
+		this.value= Card.VALUES[value];
 		this.suit= suit;
 		this.numberValue = value;
     }
