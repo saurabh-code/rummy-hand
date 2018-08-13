@@ -14,4 +14,11 @@ public class BaseCard {
 		return this.suit.compareTo(s);
 	}
 	
+	public int comparePip(Pip p) {
+		return this.pip.compareTo(p);
+	}
+	
+	public boolean isJoker() {
+		return suit == Suit.JOKER;
+	}
 }

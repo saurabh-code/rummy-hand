@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.bootcamp.rummy_hand.cardLib.Pip;
 import com.bootcamp.rummy_hand.oldcard.Card;
 
 public class Test {
@@ -67,7 +68,7 @@ public class Test {
 	
 	@org.junit.Test
 	public void test() {
-		int a = 0;
+		System.out.println(Pip.ACE.compareTo(Pip.EIGHT));
 	}
 	
 }
