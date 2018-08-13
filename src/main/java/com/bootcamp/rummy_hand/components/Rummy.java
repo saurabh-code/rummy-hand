@@ -3,8 +3,8 @@ package com.bootcamp.rummy_hand.components;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.bootcamp.rummy_hand.card.Card;
-import com.bootcamp.rummy_hand.card.CardsDeck;
+import com.bootcamp.rummy_hand.oldcard.Card;
+import com.bootcamp.rummy_hand.oldcard.CardsDeck;
 
 public class Rummy {
 	
@@ -13,8 +13,6 @@ public class Rummy {
 	public Rummy(int rummyHandSize){
 		this.rummyHandSize = rummyHandSize;
 	}
-	
-
 	
 	public int minNumOfCardsRequired(List<Card> hand){
 		
@@ -39,7 +37,7 @@ public class Rummy {
 		CardsDeck cd = new CardsDeck();
 		Rummy rm = new Rummy(13);
 		for(int i = 0;i<100 ; i++){
-			ArrayList<Card> hand = cd.getRandomCards(13);
+			List<Card> hand = cd.getRandomCards(13);
 			for(Card card:hand){
 				card.printCard();
 			}

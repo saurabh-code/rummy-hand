@@ -7,8 +7,12 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 
+import com.bootcamp.rummy_hand.cardLib.BaseCard;
+import com.bootcamp.rummy_hand.cardLib.Deck;
 import com.bootcamp.rummy_hand.cardLib.Pip;
+import com.bootcamp.rummy_hand.cardLib.RummyCard;
 import com.bootcamp.rummy_hand.oldcard.Card;
 
 public class Test {
@@ -68,7 +72,18 @@ public class Test {
 	
 	@org.junit.Test
 	public void test() {
-		System.out.println(Pip.ACE.compareTo(Pip.EIGHT));
+		Function<Map<String, Object>, Function<BaseCard, RummyCard>> convert = p -> c -> {
+			Pip wildCard = (Pip) p.get("wildCard");
+			return new RummyCard(c, c.getPip() == wildCard);
+		};
+		
+		Map<String, Object> properties = new HashMap<>();
+		properties.put("wildCard", Pip.TWO);
+		properties.put("numPacks", 1);
+		properties.put("numJokers", 2);
+		
+		Deck<RummyCard> cd = new Deck<>(properties, convert);
+		System.out.println(cd.dealCard(2, 10));
 	}
 	
 }

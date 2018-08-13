@@ -21,4 +21,18 @@ public class BaseCard {
 	public boolean isJoker() {
 		return suit == Suit.JOKER;
 	}
+	
+	public Suit getSuit() {
+		return this.suit;
+	}
+	
+	public Pip getPip() {
+		return this.pip;
+	}
+
+	@Override
+	public String toString() {
+		return "BaseCard [suit=" + suit + ", pip=" + pip + "]";
+	}
+	
 }
