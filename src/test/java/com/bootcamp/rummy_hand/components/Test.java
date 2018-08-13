@@ -65,4 +65,9 @@ public class Test {
 		assertEquals(expected, RummyUtils.getAllValidRuns(input));
 	}
 	
+	@org.junit.Test
+	public void test() {
+		int a = 0;
+	}
+	
 }
